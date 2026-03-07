@@ -106,8 +106,8 @@ resource "aws_route" "public" {
   gateway_id = aws_internet_gateway.main.id
 }
 
-resource "aws_eip" "lb" {
-
+resource "aws_eip" "nat" {
+  domain = "vpc"
   tags = merge(
   local.common_tags,
   # roboshop-dev-eip

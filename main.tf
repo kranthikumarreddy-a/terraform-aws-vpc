@@ -108,14 +108,9 @@ resource "aws_route" "public" {
 
 resource "aws_eip" "lb" {
 
-  tags = merge(
-  local.common_tags,
-  # roboshop-dev-eip
-  {
-    Name = "${var.project}-${var.environment}-nat"
-  },
+  tags =
   var.eip_tags
-  )
+  
 }
 
 resource "aws_nat_gateway" "main" {

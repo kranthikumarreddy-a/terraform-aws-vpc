@@ -25,7 +25,7 @@ resource "aws_vpc_peering_connection" "default" {
   }
   
   )
-
+}
   resource "aws_route" "public_peering" {
   count = var.is_peering_required ? 1 : 0
   route_table_id            = aws_route_table.public.id
@@ -56,4 +56,4 @@ resource "aws_route" "database_peering" {
 
 
 
-}
+
